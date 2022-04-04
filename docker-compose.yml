@@ -1,0 +1,17 @@
+version: "3"
+
+
+services:
+  notifications-ms:
+    container_name: notifications-ms
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: dev
+    env_file: ./.env
+    volumes:
+      - .:/opt/app/api
+    ports:
+      - ${PORT}:${PORT}
+
+
